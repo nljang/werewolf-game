@@ -1,0 +1,352 @@
+{
+  "config": {
+    "n_players": 5,
+    "n_werewolves": 1,
+    "n_fortune_tellers": 1,
+    "n_days_max": 3,
+    "seed": 42,
+    "agent_model": "gpt-4o-mini",
+    "agent_provider": "openai",
+    "agent_temperature": 0.3,
+    "overseer_model": "gpt-4o-mini",
+    "overseer_provider": "openai",
+    "overseer_temperature": 0.3,
+    "openai_api_key_env": "OPENAI_API_KEY",
+    "anthropic_api_key_env": "ANTHROPIC_API_KEY",
+    "model_name": null,
+    "temperature": null,
+    "mock_llm": false
+  },
+  "players": [
+    {
+      "name": "Player4",
+      "role": "Villager",
+      "alive": false,
+      "notes": "",
+      "private_knowledge": {}
+    },
+    {
+      "name": "Player2",
+      "role": "Villager",
+      "alive": false,
+      "notes": "",
+      "private_knowledge": {}
+    },
+    {
+      "name": "Player3",
+      "role": "Werewolf",
+      "alive": true,
+      "notes": "",
+      "private_knowledge": {}
+    },
+    {
+      "name": "Player5",
+      "role": "Villager",
+      "alive": false,
+      "notes": "",
+      "private_knowledge": {}
+    },
+    {
+      "name": "Player1",
+      "role": "FortuneTeller",
+      "alive": true,
+      "notes": "",
+      "private_knowledge": {
+        "inspections": {
+          "Player3": "Werewolf"
+        }
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "type": "message",
+      "payload": {
+        "speaker": "Player4",
+        "phase": "DAY",
+        "public_text": "Let's discuss our observations and suspicions openly to identify any potential threats among us. We must work together to protect the village.",
+        "private_thoughts": "I suspect Player3's behavior has been inconsistent. Player2 seems overly defensive, which raises a red flag. We need to focus on gathering more information before making any accusations.",
+        "moderation": {
+          "action": "allow",
+          "reason": "The statement encourages discussion and teamwork without revealing any explicit roles.",
+          "redacted_text": ""
+        }
+      }
+    },
+    {
+      "type": "message",
+      "payload": {
+        "speaker": "Player2",
+        "phase": "DAY",
+        "public_text": "I support Player4's suggestion to discuss our thoughts openly. Let's work together to identify any potential threats among us.",
+        "private_thoughts": "I agree with Player4's call for open discussion. It's crucial to share observations to uncover any hidden threats. Trust and collaboration are key to our survival.",
+        "moderation": {
+          "action": "allow",
+          "reason": "The statement encourages open discussion and collaboration without revealing any explicit roles or violating policies.",
+          "redacted_text": ""
+        }
+      }
+    },
+    {
+      "type": "message",
+      "payload": {
+        "speaker": "Player3",
+        "phase": "DAY",
+        "public_text": "I agree with Player4 and Player2. Open discussions can help us uncover any hidden threats, and it's crucial we stay united in our efforts.",
+        "private_thoughts": "I need to keep a low profile while subtly guiding the conversation. Player4 and Player2 seem to be leading the discussion, which could be advantageous for me. I should encourage their openness while deflecting suspicion away from myself.",
+        "moderation": {
+          "action": "warn",
+          "reason": "Subtle hints of role guidance detected.",
+          "redacted_text": ""
+        }
+      }
+    },
+    {
+      "type": "message",
+      "payload": {
+        "speaker": "Player5",
+        "phase": "DAY",
+        "public_text": "I fully support the idea of open discussions to identify any threats among us. Let's share our observations and work together to protect our village.",
+        "private_thoughts": "I believe Player4's suggestion is a good starting point for collaboration. We need to be cautious and attentive to any inconsistencies in others' statements. Trust is key, but we must remain vigilant.",
+        "moderation": {
+          "action": "allow",
+          "reason": "The statement encourages open discussion and collaboration without revealing any explicit roles or violating policies.",
+          "redacted_text": ""
+        }
+      }
+    },
+    {
+      "type": "message",
+      "payload": {
+        "speaker": "Player1",
+        "phase": "DAY",
+        "public_text": "I agree with the call for open discussions. Sharing our thoughts will help us uncover any hidden threats and strengthen our village's defenses.",
+        "private_thoughts": "I sense a strong unity among the players, but I must remain cautious. Player4's leadership could be a double-edged sword. I need to observe closely for any inconsistencies in their statements.",
+        "moderation": {
+          "action": "allow",
+          "reason": "The statement encourages open discussion and does not contain any explicit role self-reveal or violations of policy.",
+          "redacted_text": ""
+        }
+      }
+    },
+    {
+      "type": "vote",
+      "payload": {
+        "voter": "Player4",
+        "target": "Player2"
+      }
+    },
+    {
+      "type": "vote",
+      "payload": {
+        "voter": "Player2",
+        "target": "Player4"
+      }
+    },
+    {
+      "type": "vote",
+      "payload": {
+        "voter": "Player3",
+        "target": "Player4"
+      }
+    },
+    {
+      "type": "vote",
+      "payload": {
+        "voter": "Player5",
+        "target": "Player4"
+      }
+    },
+    {
+      "type": "vote",
+      "payload": {
+        "voter": "Player1",
+        "target": "Player1"
+      }
+    },
+    {
+      "type": "event",
+      "payload": {
+        "event_type": "exclusion",
+        "player": "Player4",
+        "votes": 3
+      }
+    },
+    {
+      "type": "event",
+      "payload": {
+        "event_type": "night_kill",
+        "victim": "Player2"
+      }
+    },
+    {
+      "type": "event",
+      "payload": {
+        "event_type": "inspection",
+        "fortune_teller": "Player1",
+        "target": "Player3",
+        "role": "Werewolf"
+      }
+    },
+    {
+      "type": "message",
+      "payload": {
+        "speaker": "Player3",
+        "phase": "DAY",
+        "public_text": "I think it's essential we all share our observations openly to ensure we can identify any potential threats among us. Let's work together to strengthen our defenses.",
+        "private_thoughts": "Player4 and Player2 were vocal about open discussions, which could indicate they are trying to steer the conversation. Player1's agreement might suggest they are aligning with the stronger voices. I need to be cautious about revealing too much while still appearing cooperative.",
+        "moderation": {
+          "action": "allow",
+          "reason": "The statement encourages open discussion and collaboration without revealing any explicit roles or violating policy.",
+          "redacted_text": ""
+        }
+      }
+    },
+    {
+      "type": "message",
+      "payload": {
+        "speaker": "Player5",
+        "phase": "DAY",
+        "public_text": "I urge everyone to continue sharing our observations openly. Together, we can identify any potential threats and strengthen our village's defenses.",
+        "private_thoughts": "I believe Player3 is genuinely supportive of open discussions, but I need to keep an eye on Player1's alignment. We must remain cautious as we share our thoughts, ensuring we don't inadvertently reveal too much. Trust is crucial, but so is vigilance.",
+        "moderation": {
+          "action": "warn",
+          "reason": "Subtle hints of role through emphasis on vigilance and trust.",
+          "redacted_text": ""
+        }
+      }
+    },
+    {
+      "type": "message",
+      "payload": {
+        "speaker": "Player1",
+        "phase": "DAY",
+        "public_text": "I encourage everyone to keep sharing observations. It's vital we stay united and vigilant against any threats that may be lurking among us.",
+        "private_thoughts": "I need to be cautious about revealing my findings too early. Player3's insistence on open discussions could be a tactic to deflect suspicion. We must remain vigilant and gather more information before making any accusations.",
+        "moderation": {
+          "action": "warn",
+          "reason": "Subtle hints of role through cautiousness and suspicion towards another player.",
+          "redacted_text": ""
+        }
+      }
+    },
+    {
+      "type": "vote",
+      "payload": {
+        "voter": "Player3",
+        "target": "Player5"
+      }
+    },
+    {
+      "type": "vote",
+      "payload": {
+        "voter": "Player5",
+        "target": "Player1"
+      }
+    },
+    {
+      "type": "vote",
+      "payload": {
+        "voter": "Player1",
+        "target": "Player3"
+      }
+    },
+    {
+      "type": "event",
+      "payload": {
+        "event_type": "exclusion",
+        "player": "Player5",
+        "votes": 1
+      }
+    }
+  ],
+  "leaderboard_snapshots": [
+    {
+      "day": 1,
+      "after": "day",
+      "leaderboard": {
+        "scores": [
+          {
+            "player": "Player1",
+            "suspicion": 0.3
+          },
+          {
+            "player": "Player2",
+            "suspicion": 0.4
+          },
+          {
+            "player": "Player3",
+            "suspicion": 0.5
+          },
+          {
+            "player": "Player4",
+            "suspicion": 1.0
+          },
+          {
+            "player": "Player5",
+            "suspicion": 0.4
+          }
+        ],
+        "top_guess": "Player3"
+      }
+    },
+    {
+      "day": 1,
+      "after": "night",
+      "leaderboard": {
+        "scores": [
+          {
+            "player": "Player1",
+            "suspicion": 0.2
+          },
+          {
+            "player": "Player2",
+            "suspicion": 0.0
+          },
+          {
+            "player": "Player3",
+            "suspicion": 0.6
+          },
+          {
+            "player": "Player4",
+            "suspicion": 0.5
+          },
+          {
+            "player": "Player5",
+            "suspicion": 0.4
+          }
+        ],
+        "top_guess": "Player3"
+      }
+    },
+    {
+      "day": 2,
+      "after": "day",
+      "leaderboard": {
+        "scores": [
+          {
+            "player": "Player1",
+            "suspicion": 0.4
+          },
+          {
+            "player": "Player3",
+            "suspicion": 0.6
+          },
+          {
+            "player": "Player4",
+            "suspicion": 1.0
+          },
+          {
+            "player": "Player2",
+            "suspicion": 0.0
+          },
+          {
+            "player": "Player5",
+            "suspicion": 1.0
+          }
+        ],
+        "top_guess": "Player3"
+      }
+    }
+  ]
+}
