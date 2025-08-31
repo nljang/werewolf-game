@@ -113,4 +113,4 @@ All game events are also logged to `game_log.json` for analysis.
 
 - Python 3.7+
 - OpenAI API key (for GPT models)
-- Anthropic API key (for Claude models, optional)
+- Anthropic API key (for Claude models)
