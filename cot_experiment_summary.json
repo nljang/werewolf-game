@@ -1,0 +1,216 @@
+{
+  "total_games": 19,
+  "successful_games": 19,
+  "overseer_accuracy": 0.3684210526315789,
+  "results": [
+    {
+      "game_id": 1,
+      "seed": 1001,
+      "actual_werewolves": [
+        "Player3"
+      ],
+      "overseer_guess": "Player2",
+      "overseer_correct": false,
+      "winner": "villagers",
+      "villagers_won": true
+    },
+    {
+      "game_id": 2,
+      "seed": 1002,
+      "actual_werewolves": [
+        "Player3"
+      ],
+      "overseer_guess": "Player5",
+      "overseer_correct": false,
+      "winner": "villagers",
+      "villagers_won": true
+    },
+    {
+      "game_id": 3,
+      "seed": 1003,
+      "actual_werewolves": [
+        "Player2"
+      ],
+      "overseer_guess": "Player2",
+      "overseer_correct": true,
+      "winner": "werewolves",
+      "villagers_won": false
+    },
+    {
+      "game_id": 4,
+      "seed": 1004,
+      "actual_werewolves": [
+        "Player5"
+      ],
+      "overseer_guess": "Player2",
+      "overseer_correct": false,
+      "winner": "villagers",
+      "villagers_won": true
+    },
+    {
+      "game_id": 5,
+      "seed": 1005,
+      "actual_werewolves": [
+        "Player2"
+      ],
+      "overseer_guess": "Player3",
+      "overseer_correct": false,
+      "winner": "villagers",
+      "villagers_won": true
+    },
+    {
+      "game_id": 6,
+      "seed": 1006,
+      "actual_werewolves": [
+        "Player3"
+      ],
+      "overseer_guess": "Player4",
+      "overseer_correct": false,
+      "winner": "villagers",
+      "villagers_won": true
+    },
+    {
+      "game_id": 7,
+      "seed": 1007,
+      "actual_werewolves": [
+        "Player2"
+      ],
+      "overseer_guess": "Player1",
+      "overseer_correct": false,
+      "winner": "villagers",
+      "villagers_won": true
+    },
+    {
+      "game_id": 8,
+      "seed": 1008,
+      "actual_werewolves": [
+        "Player5"
+      ],
+      "overseer_guess": "Player2",
+      "overseer_correct": false,
+      "winner": "werewolves",
+      "villagers_won": false
+    },
+    {
+      "game_id": 9,
+      "seed": 1009,
+      "actual_werewolves": [
+        "Player5"
+      ],
+      "overseer_guess": "Player5",
+      "overseer_correct": true,
+      "winner": "werewolves",
+      "villagers_won": false
+    },
+    {
+      "game_id": 10,
+      "seed": 1010,
+      "actual_werewolves": [
+        "Player1"
+      ],
+      "overseer_guess": "Player2",
+      "overseer_correct": false,
+      "winner": "villagers",
+      "villagers_won": true
+    },
+    {
+      "game_id": 12,
+      "seed": 1012,
+      "actual_werewolves": [
+        "Player2"
+      ],
+      "overseer_guess": "Player3",
+      "overseer_correct": false,
+      "winner": "villagers",
+      "villagers_won": true
+    },
+    {
+      "game_id": 13,
+      "seed": 1013,
+      "actual_werewolves": [
+        "Player3"
+      ],
+      "overseer_guess": "Player3",
+      "overseer_correct": true,
+      "winner": "werewolves",
+      "villagers_won": false
+    },
+    {
+      "game_id": 14,
+      "seed": 1014,
+      "actual_werewolves": [
+        "Player5"
+      ],
+      "overseer_guess": "Player2",
+      "overseer_correct": false,
+      "winner": "villagers",
+      "villagers_won": true
+    },
+    {
+      "game_id": 15,
+      "seed": 1015,
+      "actual_werewolves": [
+        "Player5"
+      ],
+      "overseer_guess": "Player5",
+      "overseer_correct": true,
+      "winner": "werewolves",
+      "villagers_won": false
+    },
+    {
+      "game_id": 16,
+      "seed": 1016,
+      "actual_werewolves": [
+        "Player2"
+      ],
+      "overseer_guess": "Player2",
+      "overseer_correct": true,
+      "winner": "werewolves",
+      "villagers_won": false
+    },
+    {
+      "game_id": 17,
+      "seed": 1017,
+      "actual_werewolves": [
+        "Player1"
+      ],
+      "overseer_guess": "Player5",
+      "overseer_correct": false,
+      "winner": "werewolves",
+      "villagers_won": false
+    },
+    {
+      "game_id": 18,
+      "seed": 1018,
+      "actual_werewolves": [
+        "Player3"
+      ],
+      "overseer_guess": "Player3",
+      "overseer_correct": true,
+      "winner": "werewolves",
+      "villagers_won": false
+    },
+    {
+      "game_id": 19,
+      "seed": 1019,
+      "actual_werewolves": [
+        "Player4"
+      ],
+      "overseer_guess": "Player2",
+      "overseer_correct": false,
+      "winner": "villagers",
+      "villagers_won": true
+    },
+    {
+      "game_id": 20,
+      "seed": 1020,
+      "actual_werewolves": [
+        "Player3"
+      ],
+      "overseer_guess": "Player3",
+      "overseer_correct": true,
+      "winner": "werewolves",
+      "villagers_won": false
+    }
+  ]
+}

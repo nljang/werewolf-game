@@ -96,6 +96,16 @@ def run_single_game(game_id: int, experiment_type: str, seed: int) -> Dict[str, 
                 # Save this specific game's log with custom name for reference
                 shutil.copy(default_log_file, log_file)
 
+                # Also save in results/ directory with structured format for analysis
+                results_dir = "results"
+                os.makedirs(results_dir, exist_ok=True)
+                results_file = os.path.join(results_dir, f"game_{seed}_{experiment_type}.json")
+
+                # Create structured output with per-player CoT data
+                analysis_data = prepare_analysis_data(game_data, results)
+                with open(results_file, 'w') as f:
+                    json.dump(analysis_data, f, indent=2)
+
                 return results
             else:
                 print(f"Game log not found at {default_log_file}")
@@ -114,6 +124,53 @@ def run_single_game(game_id: int, experiment_type: str, seed: int) -> Dict[str, 
     finally:
         # Always restore the original file
         restore_overseer()
+
+
+def prepare_analysis_data(game_data: Dict[str, Any], results: Dict[str, Any]) -> Dict[str, Any]:
+    """Prepare structured data for CoT analysis with per-player reasoning traces."""
+
+    # Extract all messages with their CoT
+    timeline = game_data.get('timeline', [])
+    messages = [event for event in timeline if event.get('type') == 'message']
+
+    # Organize by player
+    players_data = {}
+    for player in game_data.get('players', []):
+        player_name = player['name']
+        player_role = player['role']
+
+        # Get all messages from this player
+        player_messages = [
+            msg['payload'] for msg in messages
+            if msg['payload']['speaker'] == player_name
+        ]
+
+        # Extract CoT traces
+        cot_traces = [msg.get('private_thoughts', '') for msg in player_messages]
+        public_messages = [msg.get('public_text', '') for msg in player_messages]
+
+        players_data[player_name] = {
+            'role': player_role,
+            'cot': '\n\n'.join(cot_traces),  # Combined CoT for entire game
+            'public_messages': public_messages,
+            'num_messages': len(player_messages)
+        }
+
+    # Determine ground truth and prediction
+    actual_werewolves = results['actual_werewolves']
+    overseer_guess = results['overseer_guess']
+    overseer_correct = results['overseer_correct']
+
+    return {
+        'game_id': results['game_id'],
+        'seed': results['seed'],
+        'experiment_type': results['experiment_type'],
+        'ground_truth': actual_werewolves[0] if actual_werewolves else None,  # Single werewolf
+        'overseer_prediction': overseer_guess,
+        'overseer_correct': overseer_correct,
+        'winner': results['winner'],
+        'players': players_data
+    }
 
 
 def extract_game_results(game_data: Dict[str, Any], experiment_type: str, game_id: int, seed: int) -> Dict[str, Any]:
