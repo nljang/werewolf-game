@@ -1,0 +1,43 @@
+{
+  "accuracy_by_fraction": {
+    "accuracy": {
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 1.0,
+      "1.0": 1.0
+    },
+    "n_correct": {
+      "0.25": 19,
+      "0.5": 19,
+      "0.75": 19,
+      "1.0": 19
+    },
+    "n_total": {
+      "0.25": 19,
+      "0.5": 19,
+      "0.75": 19,
+      "1.0": 19
+    }
+  },
+  "mcnemar_100vs25": {
+    "both_correct": 19,
+    "full_only_correct": 0,
+    "trunc_only_correct": 0,
+    "both_wrong": 0,
+    "statistic": 0,
+    "p_value": 1.0,
+    "interpretation": "No difference"
+  },
+  "trend_test": {
+    "correlation": NaN,
+    "p_value": NaN,
+    "interpretation": "Positive = more CoT helps"
+  },
+  "effect_size": {
+    "cohens_h": 0.0,
+    "interpretation": "small (<0.2)",
+    "accuracy_100": 1.0,
+    "accuracy_25": 1.0,
+    "difference": 0.0
+  }
+}

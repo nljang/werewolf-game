@@ -1,0 +1,152 @@
+
+Found 19 games
+
+Experiment parameters:
+  - Games: 19
+  - Truncation levels: [0.25, 0.5, 0.75, 1.0]
+  - Total API calls: 76
+  - Estimated cost: $38.00
+  - Estimated time: 2.5 minutes
+
+Proceeding with real API calls...
+
+============================================================
+H4: TRUNCATION EXPERIMENT
+============================================================
+Games: 19
+Truncation levels: [0.25, 0.5, 0.75, 1.0]
+Total overseer calls: 76
+Estimated cost: $38.00
+Estimated time: 152 seconds (~2.5 minutes)
+============================================================
+
+[1/19] Game 1001 (werewolf=Player3)
+  [1/76] 25% truncation... /Users/vineshnathan/Desktop/Side_projects/werewolf-game/analysis/experiment1_h4_truncation_causal.py:129: DeprecationWarning: The model 'claude-3-opus-20240229' is deprecated and will reach end-of-life on January 5th, 2026.
+Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+  response = client.messages.create(
+✓ (pred=Player3)
+  [2/76] 50% truncation... /Users/vineshnathan/Desktop/Side_projects/werewolf-game/analysis/experiment1_h4_truncation_causal.py:129: DeprecationWarning: The model 'claude-3-opus-20240229' is deprecated and will reach end-of-life on January 5th, 2026.
+Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+  response = client.messages.create(
+✓ (pred=Player3)
+  [3/76] 75% truncation... ✓ (pred=Player3)
+  [4/76] 100% truncation... ✓ (pred=Player3)
+[2/19] Game 1002 (werewolf=Player3)
+  [5/76] 25% truncation... ✓ (pred=Player3)
+  [6/76] 50% truncation... ✓ (pred=Player3)
+  [7/76] 75% truncation... ✓ (pred=Player3)
+  [8/76] 100% truncation... ✓ (pred=Player3)
+[3/19] Game 1003 (werewolf=Player2)
+  [9/76] 25% truncation... ✓ (pred=Player2)
+  [10/76] 50% truncation... ✓ (pred=Player2)
+  [11/76] 75% truncation... ✓ (pred=Player2)
+  [12/76] 100% truncation... ✓ (pred=Player2)
+[4/19] Game 1004 (werewolf=Player5)
+  [13/76] 25% truncation... ✓ (pred=Player5)
+  [14/76] 50% truncation... ✓ (pred=Player5)
+  [15/76] 75% truncation... ✓ (pred=Player5)
+  [16/76] 100% truncation... ✓ (pred=Player5)
+[5/19] Game 1005 (werewolf=Player2)
+  [17/76] 25% truncation... ✓ (pred=Player2)
+  [18/76] 50% truncation... ✓ (pred=Player2)
+  [19/76] 75% truncation... ✓ (pred=Player2)
+  [20/76] 100% truncation... ✓ (pred=Player2)
+[6/19] Game 1006 (werewolf=Player3)
+  [21/76] 25% truncation... ✓ (pred=Player3)
+  [22/76] 50% truncation... ✓ (pred=Player3)
+  [23/76] 75% truncation... ✓ (pred=Player3)
+  [24/76] 100% truncation... ✓ (pred=Player3)
+[7/19] Game 1007 (werewolf=Player2)
+  [25/76] 25% truncation... ✓ (pred=Player2)
+  [26/76] 50% truncation... ✓ (pred=Player2)
+  [27/76] 75% truncation... ✓ (pred=Player2)
+  [28/76] 100% truncation... ✓ (pred=Player2)
+[8/19] Game 1008 (werewolf=Player5)
+  [29/76] 25% truncation... ✓ (pred=Player5)
+  [30/76] 50% truncation... ✓ (pred=Player5)
+  [31/76] 75% truncation... ✓ (pred=Player5)
+  [32/76] 100% truncation... ✓ (pred=Player5)
+[9/19] Game 1009 (werewolf=Player5)
+  [33/76] 25% truncation... ✓ (pred=Player5)
+  [34/76] 50% truncation... ✓ (pred=Player5)
+  [35/76] 75% truncation... ✓ (pred=Player5)
+  [36/76] 100% truncation... ✓ (pred=Player5)
+[10/19] Game 1010 (werewolf=Player1)
+  [37/76] 25% truncation... ✓ (pred=Player1)
+  [38/76] 50% truncation... ✓ (pred=Player1)
+  [39/76] 75% truncation... ✓ (pred=Player1)
+  [40/76] 100% truncation... ✓ (pred=Player1)
+[11/19] Game 1012 (werewolf=Player2)
+  [41/76] 25% truncation... ✓ (pred=Player2)
+  [42/76] 50% truncation... ✓ (pred=Player2)
+  [43/76] 75% truncation... ✓ (pred=Player2)
+  [44/76] 100% truncation... ✓ (pred=Player2)
+[12/19] Game 1013 (werewolf=Player3)
+  [45/76] 25% truncation... ✓ (pred=Player3)
+  [46/76] 50% truncation... ✓ (pred=Player3)
+  [47/76] 75% truncation... ✓ (pred=Player3)
+  [48/76] 100% truncation... ✓ (pred=Player3)
+[13/19] Game 1014 (werewolf=Player5)
+  [49/76] 25% truncation... ✓ (pred=Player5)
+  [50/76] 50% truncation... ✓ (pred=Player5)
+  [51/76] 75% truncation... ✓ (pred=Player5)
+  [52/76] 100% truncation... ✓ (pred=Player5)
+[14/19] Game 1015 (werewolf=Player5)
+  [53/76] 25% truncation... ✓ (pred=Player5)
+  [54/76] 50% truncation... ✓ (pred=Player5)
+  [55/76] 75% truncation... ✓ (pred=Player5)
+  [56/76] 100% truncation... ✓ (pred=Player5)
+[15/19] Game 1016 (werewolf=Player2)
+  [57/76] 25% truncation... ✓ (pred=Player2)
+  [58/76] 50% truncation... ✓ (pred=Player2)
+  [59/76] 75% truncation... ✓ (pred=Player2)
+  [60/76] 100% truncation... ✓ (pred=Player2)
+[16/19] Game 1017 (werewolf=Player1)
+  [61/76] 25% truncation... ✓ (pred=Player1)
+  [62/76] 50% truncation... ✓ (pred=Player1)
+  [63/76] 75% truncation... ✓ (pred=Player1)
+  [64/76] 100% truncation... ✓ (pred=Player1)
+[17/19] Game 1018 (werewolf=Player3)
+  [65/76] 25% truncation... ✓ (pred=Player3)
+  [66/76] 50% truncation... ✓ (pred=Player3)
+  [67/76] 75% truncation... ✓ (pred=Player3)
+  [68/76] 100% truncation... ✓ (pred=Player3)
+[18/19] Game 1019 (werewolf=Player4)
+  [69/76] 25% truncation... ✓ (pred=Player4)
+  [70/76] 50% truncation... ✓ (pred=Player4)
+  [71/76] 75% truncation... ✓ (pred=Player4)
+  [72/76] 100% truncation... ✓ (pred=Player4)
+[19/19] Game 1020 (werewolf=Player3)
+  [73/76] 25% truncation... ✓ (pred=Player3)
+  [74/76] 50% truncation... ✓ (pred=Player3)
+  [75/76] 75% truncation... ✓ (pred=Player3)
+  [76/76] 100% truncation... /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/scipy/stats/_stats_py.py:4424: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  warnings.warn(stats.ConstantInputWarning(msg))
+✓ (pred=Player3)
+
+✓ Raw results saved to /Users/vineshnathan/Desktop/Side_projects/werewolf-game/analysis/experiment1_output/h4_truncation_results.csv
+
+Analyzing results...
+✓ Analysis saved to /Users/vineshnathan/Desktop/Side_projects/werewolf-game/analysis/experiment1_output/h4_truncation_analysis.json
+
+Generating plots...
+
+✓ Plots saved to /Users/vineshnathan/Desktop/Side_projects/werewolf-game/analysis/experiment1_output/
+
+Generating report...
+✓ Report saved to /Users/vineshnathan/Desktop/Side_projects/werewolf-game/analysis/experiment1_output/EXPERIMENT1_H4_REPORT.md
+
+============================================================
+H4 EXPERIMENT COMPLETE
+============================================================
+
+Accuracy by truncation level:
+   25%: 100.0% (19/19)
+   50%: 100.0% (19/19)
+   75%: 100.0% (19/19)
+  100%: 100.0% (19/19)
+
+Trend: r = nan, p = nan
+❌ H4 NOT SUPPORTED: No improvement from truncation
+
+All outputs in: /Users/vineshnathan/Desktop/Side_projects/werewolf-game/analysis/experiment1_output/

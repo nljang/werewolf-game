@@ -5,7 +5,7 @@ import os
 import sys
 from dotenv import load_dotenv
 from config import GameConfig
-from engine import GameEngine
+from src.core.engine import GameEngine
 from llm import create_llm_provider
 
 

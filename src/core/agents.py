@@ -5,8 +5,8 @@ Applies filtering to private thoughts before sending to overseer to reduce infor
 
 from typing import List, Dict, Any, Optional
 from abc import ABC, abstractmethod
-from schemas import Role, Team, PlayerState, Message, Phase, ModerationResult, ModerationAction, Leaderboard, LeaderboardEntry
-from prompts import (
+from src.core.schemas import Role, Team, PlayerState, Message, Phase, ModerationResult, ModerationAction, Leaderboard, LeaderboardEntry
+from src.core.prompts import (
     player_day_message_prompt,
     player_vote_prompt,
     fortune_teller_night_prompt,
@@ -14,7 +14,7 @@ from prompts import (
     overseer_moderate_prompt,
     overseer_leaderboard_prompt
 )
-from cot_filter import AdvancedCoTFilter
+from src.filters.cot_filter import AdvancedCoTFilter
 
 
 class Player(ABC):
