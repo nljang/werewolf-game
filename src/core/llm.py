@@ -64,12 +64,12 @@ class AnthropicProvider(LLMProvider):
         self.temperature = temperature
         # Map common model names to Anthropic model IDs
         self.model_mapping = {
-            "opus": "claude-3-opus-20240229",
-            "sonnet": "claude-3-5-sonnet-20241022",
-            "haiku": "claude-3-5-haiku-20241022",
-            "claude-3-opus": "claude-3-opus-20240229",
-            "claude-3-5-sonnet": "claude-3-5-sonnet-20241022", 
-            "claude-3-5-haiku": "claude-3-5-haiku-20241022"
+            "opus": "claude-opus-4-6",
+            "sonnet": "claude-sonnet-4-6",
+            "haiku": "claude-haiku-4-5-20251001",
+            "claude-3-opus": "claude-opus-4-6",
+            "claude-3-5-sonnet": "claude-sonnet-4-6",
+            "claude-3-5-haiku": "claude-haiku-4-5-20251001",
         }
         if model_name.lower() in self.model_mapping:
             self.model_name = self.model_mapping[model_name.lower()]

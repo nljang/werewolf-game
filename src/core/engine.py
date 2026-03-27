@@ -2,7 +2,7 @@ import random
 from typing import List, Dict, Any, Optional
 from collections import Counter
 from schemas import Role, Team, PlayerState, Message, Phase, Vote, ModerationAction
-from agents import Player, Villager, Werewolf, FortuneTeller, Overseer
+from agents import Player, Villager, Werewolf, FortuneTeller, Overseer, DirectCoTOverseer, NoCoTOverseer
 from logging_utils import (
     GameLogger, print_phase_header, print_moderation, print_vote,
     print_exclusion, print_night_kill, print_leaderboard,
@@ -27,7 +27,13 @@ class GameEngine:
         self.players: Dict[str, Player] = self._create_player_agents()
         
         # Initialize overseer
-        self.overseer = Overseer(overseer_llm_provider)
+        _overseer_map = {
+            "filtered": Overseer,
+            "direct_cot": DirectCoTOverseer,
+            "no_cot": NoCoTOverseer,
+        }
+        overseer_cls = _overseer_map.get(getattr(config, "overseer_type", "filtered"), Overseer)
+        self.overseer = overseer_cls(overseer_llm_provider)
     
     def _initialize_players(self) -> List[PlayerState]:
         names = [f"Player{i+1}" for i in range(self.config.n_players)]
@@ -56,7 +62,7 @@ class GameEngine:
             if state.role == Role.VILLAGER:
                 agents[state.name] = Villager(state, self.agent_llm)
             elif state.role == Role.WEREWOLF:
-                agents[state.name] = Werewolf(state, self.agent_llm)
+                agents[state.name] = Werewolf(state, self.agent_llm, self.config.werewolf_condition)
             elif state.role == Role.FORTUNE_TELLER:
                 agents[state.name] = FortuneTeller(state, self.agent_llm)
         return agents
